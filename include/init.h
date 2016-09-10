@@ -1,5 +1,5 @@
 /*
- * Enchantment (tagged allocation)
+ * Enchantment
  *
  */
 
