@@ -47,11 +47,11 @@ int main () {
 }
 ```
 
-compile the code with `gcc code.c -larcane-enchantment`
+compile the code with `cc code.c -larcane-enchantment`
 
 ## License
 
-LGPL v3
+LGPL >=3
 
 ## "does it actually work?"
 
