@@ -1,0 +1,11 @@
+# General Stuff
+*~
+\#*\#
+.\#*
+
+# Tup junk
+.tup/
+
+# C junk
+*.[oa]
+*.so

@@ -1,0 +1,11 @@
+#
+# Compilation Rules
+#
+
+CC       = cc
+
+CFLAGS  += -O2
+CFLAGS  += -std=c99 -Wextra -Werror -pedantic
+CFLAGS  += -pipe
+CFLAGS  += -I../include/
+#CFLAGS  += -g
