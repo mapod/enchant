@@ -49,6 +49,10 @@ int main () {
 
 compile the code with `gcc code.c -larcane-enchantment`
 
+## License
+
+LGPL v3
+
 ## "does it actually work?"
 
 As far as I can tell, it works, and there isn't much code to not work.
