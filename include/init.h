@@ -39,6 +39,9 @@ int enchantment_add(enchantment e, void *ptr)
 void *enchantment_alloc(enchantment e, size_t size)
     __attribute__((warn_unused_result, nonnull));
 
+void *enchantment_realloc(enchantment e, void * ptr, size_t size)
+    __attribute__((warn_unused_result, nonnull));
+
 // free the enchantment from the constrains of the world
 void enchantment_free(enchantment e)
     __attribute__((nonnull));
