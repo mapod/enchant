@@ -14,9 +14,14 @@ fi
 
 [ -z $PREFIX ] && export PREFIX="/usr/local"
 
-if [ `whoami` != "root" ] && [ ! -w $PREFIX ]; then
-  echo "You must become more powerful to install the arcane library to '$PREFIX'."
-  su -c './install.sh'
+if [ ! -w $PREFIX ]; then
+  if [ `whoami` != "root" ]; then
+    echo "You must become more powerful to install the arcane library to '$PREFIX'."
+    su -c './install.sh'
+  else
+    echo "There appears to be a problem with the PREFIX: '$PREFIX'"
+    echo "Please fix it..."
+  fi
 else
   # install
   include=$PREFIX/include/arc/enchant
