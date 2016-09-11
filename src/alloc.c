@@ -3,8 +3,6 @@
  *
  */
 
-#include<stdlib.h>
-
 #include"init.h"
 #include"namespace.h"
 

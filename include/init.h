@@ -7,6 +7,9 @@
 
 #include<stdlib.h>
 
+// so that people can see if we have been #include'd by the program
+#define arcane_enchantment arcane_enchantment
+
 #ifdef enchantment
 # define user_wants_enchantment_namespace
 #endif
