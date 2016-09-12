@@ -6,7 +6,7 @@ freeing memory from many pointers at once.
 
 You can think of it like you can enchant a whole heap (getit?) of
 objects with a particular enchantment such that a particular spell
-will make them dissappear. Unless there's a bug. Then you're f***ed.
+will make them dissappear. Unless there's a bug.
 
 ## Download/Compile/Install
 
@@ -38,11 +38,17 @@ int main () {
 
     some_type       thing  = enchantment_alloc(a, size);
     some_other_type thing2 = enchantment_alloc(a, size2);
-    // more allocs here
+    char * str = enchantment_add(a, strdup("Here's a string!"));
+
+    // stuff here
+
+    thing = enchantment_realloc(a, thing, size3);
+
+    // and here
 
     enchantment_free(a);
 
-    // all allocs connected to a are free'd :)
+    // all allocs connected to `a' are free'd :)
 
 }
 ```
@@ -52,8 +58,3 @@ compile the code with `cc code.c -larcane-enchantment`
 ## License
 
 LGPL >=3
-
-## "does it actually work?"
-
-As far as I can tell, it works, and there isn't much code to not work.
-But there hasn't been a lot of testing, so there could be a bug.
