@@ -31,9 +31,9 @@ typedef _enchantment * enchantment;
 enchantment enchantment_new()
     __attribute__((warn_unused_result));
 
-// add a pointer to the enchantment
-int enchantment_add(enchantment e, void *ptr)
-    __attribute__((nonnull));
+// add a pointer to the enchantment (returns NULL on fail)
+void *enchantment_add(enchantment e, void *ptr)
+	__attribute__((nonnull));
 
 // malloc a new pointer for the enchantment
 void *enchantment_alloc(enchantment e, size_t size)

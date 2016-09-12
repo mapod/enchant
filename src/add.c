@@ -7,15 +7,15 @@
 #include"namespace.h"
 
 
-int enchantment_add(enchantment e, void *ptr) {
+void *enchantment_add(enchantment e, void *ptr) {
 
 	e->size++;
 	e->ptrs = realloc(e->ptrs, sizeof(e->ptrs[0]) * e->size);
 
-	if (! e->ptrs) return 1;
+	if (! e->ptrs) return NULL;
     
 	e->ptrs[e->size - 1] = ptr;
 
-	return 0;
+	return ptr;
 
 }
