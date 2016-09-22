@@ -11,8 +11,13 @@ CFLAGS  += -I../include/
 #CFLAGS  += -g
 
 SHRFLAGS += -shared
-#SHRFLAGS += -flto
+SHRFLAGS += -flto
 
+# compile an object file
 !cc  = |> $(CC) $(CFLAGS) -c %f -o %o |> %B.o
+
+# make an ar archive
 !ar  = |> ar -vq %o %f |>
+
+# make a shared library
 !shr = |> $(CC) $(SHRFLAGS) %f -o %o |>
