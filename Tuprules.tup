@@ -2,10 +2,17 @@
 # Compilation Rules
 #
 
-CC       = cc
+CC       = gcc
 
-CFLAGS  += -O2
+CFLAGS  += -O3 -ffast-math
 CFLAGS  += -std=c99 -Wall -Wextra -Werror -pedantic
 CFLAGS  += -pipe
 CFLAGS  += -I../include/
 #CFLAGS  += -g
+
+SHRFLAGS += -shared
+#SHRFLAGS += -flto
+
+!cc  = |> $(CC) $(CFLAGS) -c %f -o %o |> %B.o
+!ar  = |> ar -vq %o %f |>
+!shr = |> $(CC) $(SHRFLAGS) %f -o %o |>
