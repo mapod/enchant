@@ -13,7 +13,8 @@ void *enchantment_realloc(enchantment e, void *ptr, size_t size) {
 
 	size_t i;
 	for (i = 0; i < e->size; i++)
-		if (e->ptrs[i] == ptr) break;
+		if (e->ptrs[i] == ptr)
+			break;
 
 	e->ptrs[i] = newptr;
     

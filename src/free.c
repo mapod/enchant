@@ -10,7 +10,8 @@
 void enchantment_free(enchantment e) {
 
 	for (size_t i = 0; i < e->size; i++)
-		free(e->ptrs[i]);
+		if (e->ptrs[i])
+			free(e->ptrs[i]);
     
 	free(e->ptrs);
 	free(e);
